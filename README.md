@@ -1,8 +1,13 @@
 # Setup
+Dependencies
 ```
 pip install --editable ./
 pip install -r requirements.txt
 ```
+Datasets: [iwslt](https://drive.google.com/file/d/17AuW_aXG4bARmH7nUglV2nf2snryoDan/view?usp=drive_link), [europarl](https://drive.google.com/file/d/1LEhUc81iMZVyRBBl6l2hz2BOQV7nuSNJ/view?usp=drive_link)
+
+Checkpoints: [iswlt](https://drive.google.com/file/d/1xJn8CpXiF9ecCH7yj9C_cZeVVroVq-_S/view?usp=drive_link), [europarl](https://drive.google.com/file/d/1j7ymMJxw4eH8X-50o0KTzWE-jpcInQ1z/view?usp=drive_link)
+
 # Generation
 1. Generate a "pivot dataset", which creates pivot translations.
 2. Run the ensemble decoding script for IWSLT
