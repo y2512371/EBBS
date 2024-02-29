@@ -13,7 +13,7 @@ Checkpoints: [iswlt](https://drive.google.com/file/d/1xJn8CpXiF9ecCH7yj9C_cZeVVr
 ```
 bash build_pivot_datasets.sh iwslt_zero [ckpt_path]
 ```
-3. Run the ensemble decoding script for IWSLT
+2. Run the ensemble decoding script for IWSLT
 ```
 python3 fairseq_cli/multipivot_generate.py [dataset_bin] --path [ckpt_path] \
     --task translation_multi_pivot_epoch --gen-subset test  \
@@ -30,6 +30,7 @@ Here, `ensemble_mode` can be one of the following values:
 1. `averaging` for word-level averaging ensembles
 2. `word-voting` for word-level voting ensembles
 3. `voting` for EBBS
+    * Use `--voting_mode=[sum|total_sum|zero-one|max]` flag to test different EBBS variants.
    
 # Evaluation
 To evaluate, we apply detokenization and use sacrebleu.
