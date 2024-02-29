@@ -9,8 +9,11 @@ Datasets: [iwslt](https://drive.google.com/file/d/17AuW_aXG4bARmH7nUglV2nf2snryo
 Checkpoints: [iswlt](https://drive.google.com/file/d/1xJn8CpXiF9ecCH7yj9C_cZeVVroVq-_S/view?usp=drive_link), [europarl](https://drive.google.com/file/d/1j7ymMJxw4eH8X-50o0KTzWE-jpcInQ1z/view?usp=drive_link)
 
 # Generation
-1. Generate a "pivot dataset", which creates pivot translations.
-2. Run the ensemble decoding script for IWSLT
+1. Generate a "pivot dataset", which creates pivot translations to build ensembles.
+```
+bash build_pivot_datasets.sh iwslt_zero [ckpt_path]
+```
+3. Run the ensemble decoding script for IWSLT
 ```
 python3 fairseq_cli/multipivot_generate.py [dataset_bin] --path [ckpt_path] \
     --task translation_multi_pivot_epoch --gen-subset test  \
